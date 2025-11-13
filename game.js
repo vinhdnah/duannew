@@ -328,15 +328,28 @@ function openChatQ1() {
     const choices = document.createElement("div");
     choices.className = "choice-panel";
 
-    // A - sai
+// A = SAi → game over (ĐÃ THAY TEXT MỚI)
     choices.appendChild(
       createChoiceBtn(
         "A",
         "Nghĩ đây là người hâm mộ dễ thương → kể chuyện riêng tư.",
         () => {
-          showGameOver(
-            "Bạn bị lời khen & thân mật quá mức làm mờ cảnh giác. Đây là bước khởi đầu để thao túng/lừa đảo."
-          );
+          showGameOver(`
+            <b>Kẻ xấu sẽ lợi dụng bạn</b><br><br>
+            Bạn xử lý trong trạng thái <b>vội vàng, nôn nóng</b> vì mong tìm được một người để
+            chia sẻ những chuyện buồn của mình. Điều này đúng với kịch bản kẻ xấu mong muốn:<br>
+            tạo sự tin tưởng ban đầu → bạn chia sẻ thông tin cá nhân → bị cô lập → bị gây áp lực →
+            bị ép làm theo yêu cầu.<br><br>
+            <b>Bài học:</b>
+            <ul style="margin-top:6px;padding-left:20px;list-style:disc;">
+              <li>Kiểm tra ngay tài khoản Facebook (xem độ tin cậy).</li>
+              <li>Nếu tài khoản không đáng tin cậy thì hãy <b>CHẶN LUÔN</b>.</li>
+              <li>Không nôn nóng kết thân, không kể hết mọi chuyện, không gửi ảnh cá nhân vì mọi thông tin bạn chia sẻ đều bị lợi dụng để <b>khống chế</b> và biến bạn thành <b>con tin để tống tiền</b>.</li>
+              <li>Nếu được tặng quà → <b>KHÔNG ẤN LINK</b>, không nhận tiền, không nhận bưu phẩm (nguy cơ dính mã độc, mất tiền).</li>
+              <li>Không đi gặp kẻ lạ <b>MỘT MÌNH</b> dù có bị đe dọa.</li>
+              <li>Báo ngay cho người lớn, giáo viên chủ nhiệm và gọi <b>113</b> để được hỗ trợ.</li>
+            </ul>
+          `);
         }
       )
     );
