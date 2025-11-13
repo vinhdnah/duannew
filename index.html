@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Crush</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-root">
+    <!-- Cảnh phòng ngủ tại nhà -->
+    <div id="room-scene">
+      <div id="room-inner">
+        <div class="room-wall"></div>
+        <div class="room-window"></div>
+        <div class="room-desk"></div>
+        <div class="room-pc"></div>
+
+        <div id="room-girl" class="girl">
+          <div id="room-phone" class="phone-small hidden"></div>
+        </div>
+
+        <div id="room-noti" class="floating-noti hidden">
+          💬 Điện thoại rung... Bạn nhận được một tin nhắn lạ.
+        </div>
+
+        <div class="room-caption">
+  Bạn đang ở trong phòng học buổi tối, đang xem lại kết quả bài kiểm tra thì điện thoại rung lên...
+        </div>
+      </div>
+    </div>
+
+    <!-- Layer hiển thị khung chat, cuộc gọi, câu 3, kết quả -->
+    <div id="dialog-layer" class="hidden"></div>
+
+    <!-- Audio cuộc gọi (bạn tự thay file) -->
+    <audio id="call-audio" src="call.mp3"></audio>
+    <audio id="ringtone-audio" src="ringtone.mp3" loop></audio>
+    <audio id="win-audio" src="win.mp3"></audio>
+    <audio id="lose-audio" src="lose.mp3"></audio>
+    <audio id="ting-audio" src="ting.mp3"></audio>
+    <audio id="applause-audio" src="votay.mp3"></audio>
+
+  </div>
+
+  <script src="game.js"></script>
+
+  <!-- MENU MỞ ĐẦU -->
+  <div id="menu-layer">
+    <div class="menu-inner">
+      <h1 class="menu-title">Crush</h1>
+      <button id="btn-start" class="menu-start">Start</button>
+    </div>
+  </div>
+
+  <!-- Nhạc nền chờ ở menu -->
+  <audio id="bg-audio" src="bg-wait1.mp3" loop></audio>
+<!-- POPUP XIN CHÀO -->
+<div id="greet-modal" class="greet-modal" style="display:none">
+  <div class="greet-box">
+    <div class="greet-title">Xin chào 👋</div>
+    <button id="btn-greet-ok" class="greet-ok">OK</button>
+  </div>
+</div>
+
+</body>
+</html>
