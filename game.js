@@ -856,23 +856,14 @@ function showGameOver(reasonText) {
     <div class="pill-badge pill-danger">
       ⚠️ GAME OVER · Bạn đã rơi vào bẫy
     </div>
+
     <div class="result-title">Kẻ xấu đã lợi dụng bạn</div>
+
     <div class="result-sub">
-      <b>Sai lầm chính:</b> ${reasonText}
-      <br/><br/>
-      Bạn xử lý trong trạng thái <b>sợ hãi</b> và gần như <b>một mình</b>,
-      đúng với kịch bản kẻ xấu mong muốn: cô lập – gây áp lực – ép làm theo yêu cầu.
-    </div>
-    <div class="result-sub">
-      <b>Bài học:</b>
-      <ul style="margin-top:6px;padding-left:18px;list-style:disc;">
-        <li>Không chuyển tiền, không gửi thêm ảnh hay thông tin cá nhân.</li>
-        <li>Không đi gặp kẻ lạ một mình, dù bị đe dọa thế nào.</li>
-        <li>Báo ngay cho thầy cô, phụ huynh hoặc gọi tổng đài <b>111</b>.</li>
-      </ul>
+      ${reasonText}
     </div>
 
-    <!-- NEW FOOTER -->
+    <!-- FOOTER -->
     <div class="copyright-footer">All rights reserved © 2025</div>
   `;
 
@@ -896,21 +887,18 @@ function showGameOver(reasonText) {
     );
   });
 
-
-
+  const creditBtn = document.createElement("button");
+  creditBtn.className = "ghost-btn";
+  creditBtn.textContent = "Credit";
+  creditBtn.addEventListener("click", showCredit);
 
   actions.appendChild(retryBtn);
   actions.appendChild(tipsBtn);
+  actions.appendChild(creditBtn);
   card.appendChild(actions);
 
   dialogLayer.appendChild(card);
-  // ====== NÚT CREDIT ======
-const creditBtn = document.createElement("button");
-creditBtn.className = "ghost-btn";
-creditBtn.textContent = "Credit";
-creditBtn.addEventListener("click", showCredit);
 
-actions.appendChild(creditBtn);
   // Âm thanh thua
   const loseAudio = document.getElementById("lose-audio");
   if (loseAudio) {
@@ -919,6 +907,7 @@ actions.appendChild(creditBtn);
     loseAudio.play().catch(() => {});
   }
 }
+
 
 
 
